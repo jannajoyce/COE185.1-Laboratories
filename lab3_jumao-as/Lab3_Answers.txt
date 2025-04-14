@@ -1,0 +1,39 @@
+			      COE185.1
+		    Lab 3 - Rotary Encoders and Interrupts
+
+Edit the document below to fill in your answers to the review problems at the
+end of the assignment web page.
+
+
+1. (2 points) TIMER1 is to be used to output a 50% duty cycle signal
+(squarewave) for tone generation as was done in this lab.  For the two tones
+specified below, determine a prescalar, the OCR1A value, and the number of
+interrupts to allow before stopping the timer.  Your answer for the prescalar
+and OCR1A values should be the ones that give the most accurate timing.
+
+a. 200 Hz tone for 5 seconds
+Prescalar = 8
+OCR1A = 4999
+NO. OF INTERRUPTS = 2000
+
+
+
+b. 32 Hz tone for 2 seconds
+
+Prescalar = 256
+OCR1A = 974
+NO. OF INTERRUPTS = 128
+
+
+
+2. (1 point) Briefly explain why updating the LCD display in your ISR could
+lead to undesirable behavior for this lab.
+
+Updating the LCD within an ISR can cause delays and missed interrupts, as ISRs should be short and efficient. LCD updates are time-consuming and can disrupt real-time operations, cause inefficient context switching, and risk data corruption if both the ISR and main program access the LCD simultaneously. For efficient handling, it's better to set a flag in the ISR and update the LCD in the main loop.
+
+
+
+
+
+
+
